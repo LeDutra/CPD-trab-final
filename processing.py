@@ -2,6 +2,7 @@
 # preparação e processamento dos dados
 
 import csv
+import array as arr
 
 
 def write_table(table_file):
@@ -30,3 +31,26 @@ def read_table(table_file):
             print(f'Nome: {row[0]}')    # row[0] = Nome
             print(f'Idade: {row[1]}')   # row[1] = Idade
             line_count += 1
+
+
+# Função readTableToArray:
+# recebe uma tabela csv e retorna um array
+# codigo abaixo ESTA INCOMPLETO
+
+
+def read_table_to_array(table_file):
+
+    a = arr.array                                   # definindo array a ser usado
+    lista = []
+
+    with open(table_file, 'r') as data_file:
+        table = csv.reader(data_file, delimiter=',')
+        line_count = 0
+
+        for row in table:
+            lista[line_count] = (row[0], row[1])              # define a tupla
+            a = lista              # adiciona tupla no array
+            line_count += 1                         # rinse and repeat
+
+    return a
+
