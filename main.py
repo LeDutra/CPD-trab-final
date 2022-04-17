@@ -1,12 +1,15 @@
 # Função principal
 
-import processing as proc                       # importa o arquivo auxiliar structure.py
-table = 'table.csv'                             # define o arquivo da tabela utilizada para armazenamento em .csv
+# Importa o arquivo auxiliar processing.py com as funções de procesamento
+import processing as proc
 
+# Define o nome do arquivo da 'tabela' .csv
+table = 'table.csv'
 
-proc.write_table(table)                         # função temporária com input manual pra testar escritas na tabela
-proc.read_table(table)                          # função de leitura da tabela de arquivo .csv
+# proc.write_csv(table)                           # função de teste com input manual pra testar escritas na tabela
+# proc.print_table(table)                         # função de teste de print da tabela de arquivo .csv
 
-# array = proc.read_table_to_array(table)       # incompleto
+lista = proc.read_table_to_list(table)          # chama função que converte tabela csv para lista ordenada
 
-
+for Pessoa in lista:
+    print(Pessoa.nome, Pessoa.idade)
